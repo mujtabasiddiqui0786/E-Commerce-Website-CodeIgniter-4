@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>MNASATI</title>
     <link rel="stylesheet" href="<?= base_url('css/header.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/product.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/marketplace.css') ?>">
@@ -21,9 +21,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/marketplace">Products</a></li>
+                <li><a href="/login">Login</a></li>
                 <li><a href="#">Cart <i class="fa fa-shopping-cart"></i></a></li>
             </ul>
         </nav>

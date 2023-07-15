@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
                 'name' => 'Novel',
                 'slug' => 'novel',
                 'type' => 'digital',
-                'description' => 'Best-selling novel by a renowned author.',
+                'description' => 'Best-selling novel by author.',
             ],
         ];
 

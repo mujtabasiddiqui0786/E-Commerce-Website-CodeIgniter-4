@@ -17,9 +17,10 @@ class ProductSubSeeder extends Seeder
                     ['quantity' => 10, 'price' => 8.99],
                 ]),
                 'pictures' => json_encode([
-                    'https://example.com/image1.jpg',
-                    'https://example.com/image2.jpg',
-                    'https://example.com/image3.jpg',
+                    'images/products/1/1.jpg',
+                    'images/products/1/2.jpg',
+                    'images/products/1/3.jpg',
+                    'images/products/1/4.jpg',
                 ]),
                 'product_id' => 1, // Reference to the products table, assuming the product with ID 1 exists
             ],
@@ -31,10 +32,49 @@ class ProductSubSeeder extends Seeder
                     ['quantity' => 6, 'price' => 13.99],
                 ]),
                 'pictures' => json_encode([
-                    'https://example.com/image4.jpg',
-                    'https://example.com/image5.jpg',
+                    'images/products/2/1.jpg',
+                    'images/products/2/2.jpg',
+                    'images/products/3/2.jpg',
                 ]),
                 'product_id' => 2, // Reference to the products table, assuming the product with ID 2 exists
+            ],
+            [
+                'article_number' => 'GHI654',
+                'graduate_prices' => json_encode([
+                    ['quantity' => 10, 'price' => 15.99],
+                    ['quantity' => 3, 'price' => 14.99],
+                    ['quantity' => 6, 'price' => 13.99],
+                ]),
+                'pictures' => json_encode([
+                    'images/products/3/1.jpg',
+                    'images/products/3/2.jpg',
+                ]),
+                'product_id' => 3, // Reference to the products table, assuming the product with ID 2 exists
+            ],
+            [
+                'article_number' => 'GHI654',
+                'graduate_prices' => json_encode([
+                    ['quantity' => 10, 'price' => 15.99],
+                    ['quantity' => 3, 'price' => 14.99],
+                    ['quantity' => 6, 'price' => 13.99],
+                ]),
+                'pictures' => json_encode([
+                    'images/products/4/1.jpg',
+                ]),
+                'product_id' => 4, // Reference to the products table, assuming the product with ID 2 exists
+            ],
+            [
+                'article_number' => 'GHI654',
+                'graduate_prices' => json_encode([
+                    ['quantity' => 10, 'price' => 15.99],
+                    ['quantity' => 3, 'price' => 14.99],
+                    ['quantity' => 6, 'price' => 13.99],
+                ]),
+                'pictures' => json_encode([
+                    'images/products/5/1.jpg',
+                    'images/products/5/2.jpg',
+                ]),
+                'product_id' => 5, // Reference to the products table, assuming the product with ID 2 exists
             ],
             // Add more seed data entries as needed
         ];

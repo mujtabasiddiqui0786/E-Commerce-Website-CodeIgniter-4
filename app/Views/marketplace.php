@@ -1,4 +1,3 @@
-   <?php print_r($products);?>
     <div class="container padding-to-down">
         <div class="row">
         <aside class="col-md-3 filter-color">
@@ -34,91 +33,15 @@
         </aside>
             <main class="col-md-9">
                 <h1>Marketplace</h1>
-                <div class="row padding-to-up">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="<?= base_url('images/products/product-1.jpg') ?>" class="card-img-top custom-img" alt="Item 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Item 1</h5>
-                                <p class="card-text">Description of Item 1</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="card-price">$10</span>
-                                    <a href="#" class="btn btn-primary text-start">Add to Cart</a>
-                                </div>
+                <?php foreach (array_chunk($products, 3) as $chunk): ?>
+                    <div class="row padding-to-up">
+                        <?php foreach ($chunk as $product): ?>
+                            <div class="col-md-4">
+                                <?= view('common/card', ['product' => $product]) ?>
                             </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="<?= base_url('images/products/product-2.jpeg') ?>" class="card-img-top custom-img" alt="Item 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Item 2</h5>
-                                <p class="card-text">Description of Item 2</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="card-price">$15</span>
-                                    <a href="#" class="btn btn-primary text-start">Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="<?= base_url('images/products/product-3.jpeg') ?>" class="card-img-top custom-img" alt="Item 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Item 3</h5>
-                                <p class="card-text">Description of Item 3</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="card-price">$128</span>
-                                    <a href="#" class="btn btn-primary text-start">Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more item cards -->
-                </div>
-
-                <div class="row padding-to-up">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="<?= base_url('images/products/product-1.jpg') ?>" class="card-img-top custom-img" alt="Item 4">
-                            <div class="card-body">
-                                <h5 class="card-title">Item 4</h5>
-                                <p class="card-text">Description of Item 4</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="card-price">$14</span>
-                                    <a href="#" class="btn btn-primary text-start">Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="<?= base_url('images/products/product-2.jpeg') ?>" class="card-img-top custom-img" alt="Item 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Item 5</h5>
-                                <p class="card-text">Description of Item 5</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="card-price">$20</span>
-                                    <a href="#" class="btn btn-primary text-start">Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="<?= base_url('images/products/product-3.jpeg') ?>" class="card-img-top custom-img" alt="Item 6">
-                            <div class="card-body">
-                                <h5 class="card-title">Item 6</h5>
-                                <p class="card-text">Description of Item 6</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="card-price">$15</span>
-                                    <a href="#" class="btn btn-primary text-start">Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more item cards -->
-                </div>
+                <?php endforeach; ?>
             </main>
         </div>
     </div>
