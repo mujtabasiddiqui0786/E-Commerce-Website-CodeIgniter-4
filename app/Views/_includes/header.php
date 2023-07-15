@@ -23,8 +23,13 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/marketplace">Products</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="#">Cart <i class="fa fa-shopping-cart"></i></a></li>
+                <?php if (session()->get('isLoggedIn')) : ?>
+                    <li><a href="#">Welcome, <?= session()->get('name') ?></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <?php else : ?>
+                    <li><a href="/login">Login</a></li>
+                <?php endif; ?>
+                <li><a href="#">Cart <i class="fa fa-shopping-cart" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Cart"></i></a></li>
             </ul>
         </nav>
     </div>

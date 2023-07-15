@@ -31,32 +31,27 @@ class LoginController extends BaseController
             return $this->incorrectPassword();
         }
 
-        // Successful login
-        return redirect()->to('dashboard');
+        // Store user session
+        $session = session();
+        $userData = [
+            'id' => $user['id'],
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'isLoggedIn' => true
+            // Add other user data if needed
+        ];
+        $session->set($userData);
+
+        // Successful login, redirect to marketplace
+        return redirect()->to('/marketplace');
     }
 
     private function findUserByEmail($email)
     {
-        // You can implement your own logic here to find the user by email
-        // For simplicity, we'll check against the sample user data
+        $db = \Config\Database::connect(); // Assuming you have configured your database properly
+        $user = $db->table('users')->where('email', $email)->get()->getRowArray();
 
-        $users = [
-            [
-                'id' => 1,
-                'name' => 'John Doe',
-                'email' => 'john@example.com',
-                'password' => '$2y$10$dtAJbyQRvB/.tGYb0n7Wju0ngTad50F5SQbzYk33V5qrWjI7olKqi' // Hashed password for 'secret'
-            ],
-            // Add other user data here
-        ];
-
-        foreach ($users as $user) {
-            if ($user['email'] === $email) {
-                return $user;
-            }
-        }
-
-        return null;
+        return $user;
     }
 
     private function validatePassword($password, $hashedPassword)
@@ -78,4 +73,17 @@ class LoginController extends BaseController
         $data['error'] = 'Incorrect password';
         return view('login', $data);
     }
+
+    public function logout()
+    {
+        // Retrieve the session instance
+        $session = session();
+
+        // Destroy the session data
+        $session->destroy();
+
+        // Redirect to the login page
+        return redirect()->to('/login');
+    }
+
 }
