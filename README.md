@@ -8,11 +8,23 @@ The Repository contains both the assignments. There is a folder named assignment
 ## Setup
 
 `git clone https://github.com/mujtabasiddiqui0786/mnasati-assignment.git` 
+
+
 `composer install`
+
+
 `create a database`
+
+
 `update the env file, and the app/config/Database.php/` with the database name
+
+
 `php spark migrate`
+
+
 `php spark db:seed CategorySeeder; php spark db:seed ProductSeeder; php spark db:seed ProductSubSeeder; php spark db:seed UserSeeder; php spark db:seed ProductSalesSeeder;`
+
+
 `php spark serve`
 
 ## Server Requirements
