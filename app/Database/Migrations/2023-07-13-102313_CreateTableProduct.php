@@ -28,15 +28,21 @@ class CreateTableProduct extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
+            'type' => [
+                'type'       => 'ENUM',
+                'constraint' => ['digital', 'physical'],
+                'default'    => 'physical',
+            ],
             'description' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'price' => [
-                'type' => 'DECIMAL',
-                'constraint' => '10,2',
-                'unsigned' => true,
-            ],
+            // price will be managed at the time of sale, and sub product details
+            // 'price' => [
+            //     'type' => 'DECIMAL',
+            //     'constraint' => '10,2',
+            //     'unsigned' => true,
+            // ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -48,7 +54,7 @@ class CreateTableProduct extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('category_id', 'categories', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('category_id', 'product_category', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('products');
     }
 

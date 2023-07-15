@@ -1,0 +1,16 @@
+.padding-to-up{
+    padding-top: 50px;
+}
+
+.padding-to-down{
+    padding-bottom: 50px;
+}
+
+.custom-img {
+    height: 270px;
+    width: 100%;
+}
+
+.filter-color{
+    background-color: gainsboro;
+}
