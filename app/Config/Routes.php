@@ -52,3 +52,4 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 $routes->get('login', 'LoginController::index');
 $routes->post('login/authenticate', 'LoginController::authenticate');
 $routes->get('marketplace', 'MarketplaceController::index');
+$routes->post('/cart/add', 'CartController::add');

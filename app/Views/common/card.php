@@ -41,7 +41,7 @@
                 <p class="card-text"><?= $product['description'] ?></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="card-price"><?= $product['sale_price'] ?></span>
-                    <a href="#" class="btn btn-primary text-start">Add to Cart</a>
+                    <a class="btn btn-primary text-start add-to-cart-button" data-product-id="<?= $product['id'] ?>">Add to Cart</a>
                 </div>
             </div>
         </div>

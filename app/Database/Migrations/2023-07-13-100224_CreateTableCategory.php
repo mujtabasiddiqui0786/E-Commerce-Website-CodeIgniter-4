@@ -27,6 +27,11 @@ class CreateTableCategory extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
+            'image_url' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => true,
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
