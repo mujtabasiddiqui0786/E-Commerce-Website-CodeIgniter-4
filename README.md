@@ -9,10 +9,10 @@ The Repository contains both the assignments. There is a folder named assignment
 
 ## Setup
 
-`git clone https://github.com/mujtabasiddiqui0786/mnasati-assignment.git` 
+`git clone {repo-name}` 
 
 
-`cd mnasati-assignment`
+`cd {repo-name}`
 
 
 `composer install`
